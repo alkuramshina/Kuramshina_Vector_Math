@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Players\PlayerMover.cs" />
-     <Compile Include="Assets\Scripts\Players\PlayerControls.cs" />
+     <Compile Include="Assets\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\Players\Player1Mover.cs" />
      <Compile Include="Assets\Scripts\Players\Player2Mover.cs" />
      <Folder Include="Assets" />

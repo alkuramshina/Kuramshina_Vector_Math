@@ -1,57 +1,44 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Players
 {
+    [RequireComponent(typeof(Rigidbody))]
     public abstract class PlayerMover : MonoBehaviour
     {
-        [SerializeField] protected float Speed = 5f;
+        [SerializeField] protected float Speed = 3f;
         protected PlayerControls PlayerControls;
 
         protected abstract InputAction PlayerMovementControls { get; }
-        private Coroutine _movementCoroutine;
+        private Vector2 _movementDirection;
+
+        private Rigidbody _rigidbody;
 
         private void Awake()
         {
             PlayerControls = new PlayerControls();
+            _rigidbody = GetComponent<Rigidbody>();
 
             PlayerMovementControls.Enable();
 
-            PlayerMovementControls.started += Move;
-            PlayerMovementControls.canceled  += StopMovement;
+            PlayerMovementControls.started += ChangeDirection;
         }
 
-        private void StopMovement(InputAction.CallbackContext context)
+        private void Update()
         {
-            if (_movementCoroutine is null)
-            {
-                return;
-            }
-            
-            StopCoroutine(_movementCoroutine);
-            _movementCoroutine = null;
+            Move();
         }
+        
+        private void ChangeDirection(InputAction.CallbackContext context)
+            => _movementDirection = context.ReadValue<Vector2>();
 
-        private void Move(InputAction.CallbackContext context)
-        {
-            var direction = context.ReadValue<Vector2>();
-            _movementCoroutine = StartCoroutine(Movement(new Vector3(0, direction.y, direction.x)));
-        }
-
-        private IEnumerator Movement(Vector3 direction)
-        {
-            while (true)
-            {
-                transform.position += direction * Speed * Time.deltaTime;
-                yield return null;
-            }
-        }
+        private void Move()
+            => _rigidbody.AddForce(new Vector3(0, _movementDirection.y, _movementDirection.x) * Speed * Time.deltaTime, 
+                ForceMode.Impulse);
 
         private void OnDisable()
         {
-            PlayerMovementControls.started -= Move;
-            PlayerMovementControls.canceled  -= StopMovement;
+            PlayerMovementControls.started -= ChangeDirection;
 
             PlayerMovementControls.Disable();
         }
