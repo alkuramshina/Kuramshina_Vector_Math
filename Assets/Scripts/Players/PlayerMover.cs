@@ -7,20 +7,24 @@ namespace Players
     public abstract class PlayerMover : MonoBehaviour
     {
         [SerializeField] protected float Speed = 3f;
-        protected PlayerControls PlayerControls;
+        protected PlayerControls PlayerControlSystem;
 
         protected abstract InputAction PlayerMovementControls { get; }
         private Vector2 _movementDirection;
 
         private Rigidbody _rigidbody;
+        private BallController _ballController;
 
         private void Awake()
         {
-            PlayerControls = new PlayerControls();
             _rigidbody = GetComponent<Rigidbody>();
+            _ballController = FindObjectOfType<BallController>();
 
+            PlayerControlSystem = new PlayerControls();
+            PlayerControlSystem.Enable();
+            PlayerControlSystem.Default.Serve.performed += ServeBall;
+            
             PlayerMovementControls.Enable();
-
             PlayerMovementControls.started += ChangeDirection;
         }
 
@@ -28,19 +32,25 @@ namespace Players
         {
             Move();
         }
+
+        private void ServeBall(InputAction.CallbackContext context)
+        {
+            _ballController.Serve(transform.position);
+        }
         
         private void ChangeDirection(InputAction.CallbackContext context)
             => _movementDirection = context.ReadValue<Vector2>();
 
         private void Move()
-            => _rigidbody.AddForce(new Vector3(0, _movementDirection.y, _movementDirection.x) * Speed * Time.deltaTime, 
+            => _rigidbody.AddForce(new Vector3(0, _movementDirection.y, _movementDirection.x) * (Speed * Time.deltaTime), 
                 ForceMode.Impulse);
 
         private void OnDisable()
         {
             PlayerMovementControls.started -= ChangeDirection;
-
+            PlayerControlSystem.Default.Serve.performed -= ServeBall;
             PlayerMovementControls.Disable();
+            PlayerControlSystem.Disable();
         }
     }
 }

@@ -45,6 +45,9 @@
      <Compile Include="Assets\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\Players\Player1Mover.cs" />
      <Compile Include="Assets\Scripts\Players\Player2Mover.cs" />
+     <Compile Include="Assets\Scripts\BallController.cs" />
+     <Compile Include="Assets\Scripts\PlayerGates.cs" />
+     <Compile Include="Assets\Scripts\BlockController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\Players" />
      <Folder Include="Assets\Scripts" />
