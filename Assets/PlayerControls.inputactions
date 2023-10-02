@@ -6,7 +6,7 @@
             "id": "3d1aaed0-c26c-404c-80e5-cf5350497e04",
             "actions": [
                 {
-                    "name": "Player1",
+                    "name": "Player1Movement",
                     "type": "Value",
                     "id": "95ed6481-673c-487a-9f04-f0e4625480df",
                     "expectedControlType": "Vector2",
@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Player2",
+                    "name": "Player2Movement",
                     "type": "Value",
                     "id": "2e3e7db7-3dbd-47b0-8cf7-91eab0cb2742",
                     "expectedControlType": "Vector2",
@@ -24,9 +24,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Serve",
+                    "name": "Player1Serve",
                     "type": "Button",
                     "id": "891633ab-f064-459d-b084-0652bd2d0b21",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Player2Serve",
+                    "type": "Button",
+                    "id": "b0014e98-5230-4817-ba00-f7e871b8c226",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -41,7 +50,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player2",
+                    "action": "Player2Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -52,7 +61,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player2",
+                    "action": "Player2Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -63,7 +72,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player2",
+                    "action": "Player2Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -74,7 +83,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player2",
+                    "action": "Player2Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -85,7 +94,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player2",
+                    "action": "Player2Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -96,7 +105,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Serve",
+                    "action": "Player1Serve",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -107,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player1",
+                    "action": "Player1Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -118,7 +127,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player1",
+                    "action": "Player1Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -129,7 +138,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player1",
+                    "action": "Player1Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -140,7 +149,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player1",
+                    "action": "Player1Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -151,9 +160,20 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Player1",
+                    "action": "Player1Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "af206d51-3ec3-4261-b291-54365458ac5b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Player2Serve",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

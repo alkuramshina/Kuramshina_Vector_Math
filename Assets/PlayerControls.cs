@@ -28,7 +28,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""3d1aaed0-c26c-404c-80e5-cf5350497e04"",
             ""actions"": [
                 {
-                    ""name"": ""Player1"",
+                    ""name"": ""Player1Movement"",
                     ""type"": ""Value"",
                     ""id"": ""95ed6481-673c-487a-9f04-f0e4625480df"",
                     ""expectedControlType"": ""Vector2"",
@@ -37,7 +37,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Player2"",
+                    ""name"": ""Player2Movement"",
                     ""type"": ""Value"",
                     ""id"": ""2e3e7db7-3dbd-47b0-8cf7-91eab0cb2742"",
                     ""expectedControlType"": ""Vector2"",
@@ -46,9 +46,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Serve"",
+                    ""name"": ""Player1Serve"",
                     ""type"": ""Button"",
                     ""id"": ""891633ab-f064-459d-b084-0652bd2d0b21"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Player2Serve"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0014e98-5230-4817-ba00-f7e871b8c226"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -63,7 +72,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player2"",
+                    ""action"": ""Player2Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -74,7 +83,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player2"",
+                    ""action"": ""Player2Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -85,7 +94,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player2"",
+                    ""action"": ""Player2Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -96,7 +105,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player2"",
+                    ""action"": ""Player2Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -107,7 +116,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player2"",
+                    ""action"": ""Player2Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -118,7 +127,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Serve"",
+                    ""action"": ""Player1Serve"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +138,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player1"",
+                    ""action"": ""Player1Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -140,7 +149,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player1"",
+                    ""action"": ""Player1Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -151,7 +160,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player1"",
+                    ""action"": ""Player1Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -162,7 +171,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player1"",
+                    ""action"": ""Player1Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -173,9 +182,20 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Player1"",
+                    ""action"": ""Player1Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af206d51-3ec3-4261-b291-54365458ac5b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Player2Serve"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,9 +204,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
 }");
         // Default
         m_Default = asset.FindActionMap("Default", throwIfNotFound: true);
-        m_Default_Player1 = m_Default.FindAction("Player1", throwIfNotFound: true);
-        m_Default_Player2 = m_Default.FindAction("Player2", throwIfNotFound: true);
-        m_Default_Serve = m_Default.FindAction("Serve", throwIfNotFound: true);
+        m_Default_Player1Movement = m_Default.FindAction("Player1Movement", throwIfNotFound: true);
+        m_Default_Player2Movement = m_Default.FindAction("Player2Movement", throwIfNotFound: true);
+        m_Default_Player1Serve = m_Default.FindAction("Player1Serve", throwIfNotFound: true);
+        m_Default_Player2Serve = m_Default.FindAction("Player2Serve", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -248,16 +269,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // Default
     private readonly InputActionMap m_Default;
     private List<IDefaultActions> m_DefaultActionsCallbackInterfaces = new List<IDefaultActions>();
-    private readonly InputAction m_Default_Player1;
-    private readonly InputAction m_Default_Player2;
-    private readonly InputAction m_Default_Serve;
+    private readonly InputAction m_Default_Player1Movement;
+    private readonly InputAction m_Default_Player2Movement;
+    private readonly InputAction m_Default_Player1Serve;
+    private readonly InputAction m_Default_Player2Serve;
     public struct DefaultActions
     {
         private @PlayerControls m_Wrapper;
         public DefaultActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Player1 => m_Wrapper.m_Default_Player1;
-        public InputAction @Player2 => m_Wrapper.m_Default_Player2;
-        public InputAction @Serve => m_Wrapper.m_Default_Serve;
+        public InputAction @Player1Movement => m_Wrapper.m_Default_Player1Movement;
+        public InputAction @Player2Movement => m_Wrapper.m_Default_Player2Movement;
+        public InputAction @Player1Serve => m_Wrapper.m_Default_Player1Serve;
+        public InputAction @Player2Serve => m_Wrapper.m_Default_Player2Serve;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -267,28 +290,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_DefaultActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_DefaultActionsCallbackInterfaces.Add(instance);
-            @Player1.started += instance.OnPlayer1;
-            @Player1.performed += instance.OnPlayer1;
-            @Player1.canceled += instance.OnPlayer1;
-            @Player2.started += instance.OnPlayer2;
-            @Player2.performed += instance.OnPlayer2;
-            @Player2.canceled += instance.OnPlayer2;
-            @Serve.started += instance.OnServe;
-            @Serve.performed += instance.OnServe;
-            @Serve.canceled += instance.OnServe;
+            @Player1Movement.started += instance.OnPlayer1Movement;
+            @Player1Movement.performed += instance.OnPlayer1Movement;
+            @Player1Movement.canceled += instance.OnPlayer1Movement;
+            @Player2Movement.started += instance.OnPlayer2Movement;
+            @Player2Movement.performed += instance.OnPlayer2Movement;
+            @Player2Movement.canceled += instance.OnPlayer2Movement;
+            @Player1Serve.started += instance.OnPlayer1Serve;
+            @Player1Serve.performed += instance.OnPlayer1Serve;
+            @Player1Serve.canceled += instance.OnPlayer1Serve;
+            @Player2Serve.started += instance.OnPlayer2Serve;
+            @Player2Serve.performed += instance.OnPlayer2Serve;
+            @Player2Serve.canceled += instance.OnPlayer2Serve;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
         {
-            @Player1.started -= instance.OnPlayer1;
-            @Player1.performed -= instance.OnPlayer1;
-            @Player1.canceled -= instance.OnPlayer1;
-            @Player2.started -= instance.OnPlayer2;
-            @Player2.performed -= instance.OnPlayer2;
-            @Player2.canceled -= instance.OnPlayer2;
-            @Serve.started -= instance.OnServe;
-            @Serve.performed -= instance.OnServe;
-            @Serve.canceled -= instance.OnServe;
+            @Player1Movement.started -= instance.OnPlayer1Movement;
+            @Player1Movement.performed -= instance.OnPlayer1Movement;
+            @Player1Movement.canceled -= instance.OnPlayer1Movement;
+            @Player2Movement.started -= instance.OnPlayer2Movement;
+            @Player2Movement.performed -= instance.OnPlayer2Movement;
+            @Player2Movement.canceled -= instance.OnPlayer2Movement;
+            @Player1Serve.started -= instance.OnPlayer1Serve;
+            @Player1Serve.performed -= instance.OnPlayer1Serve;
+            @Player1Serve.canceled -= instance.OnPlayer1Serve;
+            @Player2Serve.started -= instance.OnPlayer2Serve;
+            @Player2Serve.performed -= instance.OnPlayer2Serve;
+            @Player2Serve.canceled -= instance.OnPlayer2Serve;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -308,8 +337,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public DefaultActions @Default => new DefaultActions(this);
     public interface IDefaultActions
     {
-        void OnPlayer1(InputAction.CallbackContext context);
-        void OnPlayer2(InputAction.CallbackContext context);
-        void OnServe(InputAction.CallbackContext context);
+        void OnPlayer1Movement(InputAction.CallbackContext context);
+        void OnPlayer2Movement(InputAction.CallbackContext context);
+        void OnPlayer1Serve(InputAction.CallbackContext context);
+        void OnPlayer2Serve(InputAction.CallbackContext context);
     }
 }
