@@ -21,11 +21,7 @@ public class BallController: MonoBehaviour
     // Стенки/блоки/игроки
     private void OnCollisionExit(Collision other)
     {
-        var contacts = new ContactPoint[1];
-        other.GetContacts(contacts);
-        
-//        _movingDirection = Vector3.Reflect(_movingDirection, 
-        //GetContact(0).normal);
+        _movingDirection = Vector3.Reflect(_movingDirection, other.GetContact(0).normal);
     }
 
     private void Update()

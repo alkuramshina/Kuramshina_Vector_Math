@@ -1,6 +1,6 @@
 ﻿using UnityEngine.InputSystem;
 
-namespace Players
+namespace Players.Moving
 {
     public class Player2Mover : PlayerMover
     {
