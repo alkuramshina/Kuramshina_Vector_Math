@@ -41,14 +41,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Players\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Players\Moving\PlayerMover.cs" />
      <Compile Include="Assets\PlayerControls.cs" />
-     <Compile Include="Assets\Scripts\Players\Player1Controller.cs" />
-     <Compile Include="Assets\Scripts\Players\Player2Controller.cs" />
+     <Compile Include="Assets\Scripts\Players\Moving\Player1Mover.cs" />
+     <Compile Include="Assets\Scripts\Players\Moving\Player2Mover.cs" />
      <Compile Include="Assets\Scripts\BallController.cs" />
      <Compile Include="Assets\Scripts\PlayerGates.cs" />
      <Compile Include="Assets\Scripts\BlockController.cs" />
+     <Compile Include="Assets\Scripts\Players\Serving\BallServer.cs" />
+     <Compile Include="Assets\Scripts\Players\Serving\Player1BallServer.cs" />
+     <Compile Include="Assets\Scripts\Players\Serving\Player2BallServer.cs" />
      <Folder Include="Assets" />
+     <Folder Include="Assets\Scripts\Players\Serving" />
+     <Folder Include="Assets\Scripts\Players\Moving" />
      <Folder Include="Assets\Scripts\Players" />
      <Folder Include="Assets\Resources\Prefabs" />
      <Folder Include="Assets\Scripts" />

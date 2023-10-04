@@ -2,9 +2,8 @@
 
 namespace Players
 {
-    public class Player1Controller : PlayerController
+    public class Player1Mover : PlayerMover
     {
         protected override InputAction PlayerMovementControls => PlayerControlSystem.Default.Player1Movement;
-        protected override InputAction PlayerBallControls => PlayerControlSystem.Default.Player1Serve;
     }
 }

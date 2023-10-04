@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Rigidbody))]
 public class BallController: MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 15f;
     [SerializeField] private Vector3 startingPosition = Vector3.zero;
     
     public bool IsGrabbed { get; private set; }
@@ -21,7 +21,11 @@ public class BallController: MonoBehaviour
     // Стенки/блоки/игроки
     private void OnCollisionExit(Collision other)
     {
-        _movingDirection = Vector3.Reflect(_movingDirection, other.GetContact(0).normal);
+        var contacts = new ContactPoint[1];
+        other.GetContacts(contacts);
+        
+//        _movingDirection = Vector3.Reflect(_movingDirection, 
+        //GetContact(0).normal);
     }
 
     private void Update()
@@ -41,8 +45,8 @@ public class BallController: MonoBehaviour
             return;
         }
 
-        transform.position = player.position;
-        transform.rotation = player.rotation;
+        transform.SetParent(player);
+        transform.SetPositionAndRotation(player.position, player.rotation);
 
         IsMoving = false;
         IsGrabbed = true;
