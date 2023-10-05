@@ -19,6 +19,7 @@ public class BlockController: MonoBehaviour
         }
         
         _scorer.Up();
+        
         Destroy(gameObject);
     }
 }

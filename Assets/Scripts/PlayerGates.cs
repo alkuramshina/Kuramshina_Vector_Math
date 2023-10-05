@@ -18,6 +18,7 @@ public class PlayerGates: MonoBehaviour
         }
         
         _scorer.Down();
+        
         ball.RemoveFromGame();
     }
 }

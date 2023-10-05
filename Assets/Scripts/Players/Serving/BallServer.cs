@@ -10,7 +10,6 @@ namespace Players.Serving
         protected abstract Vector3 ServeDirection { get; }
 
         private bool _hasBall;
-    
         private BallController _ball;
     
         private void Awake()
