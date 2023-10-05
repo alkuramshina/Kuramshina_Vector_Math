@@ -44,6 +44,8 @@ public class BallController: MonoBehaviour
         transform.SetParent(player);
         transform.SetPositionAndRotation(player.position, player.rotation);
 
+        _movingDirection = Vector3.zero;
+
         IsMoving = false;
         IsGrabbed = true;
     }
@@ -54,8 +56,6 @@ public class BallController: MonoBehaviour
         {
             return;
         }
-        
-        _movingDirection = Vector3.forward;
 
         IsMoving = true;
         IsGrabbed = false;
