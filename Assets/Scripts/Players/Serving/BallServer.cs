@@ -7,6 +7,7 @@ namespace Players.Serving
     {
         protected abstract InputAction PlayerBallControls { get; }
         protected PlayerControls PlayerControlSystem;
+        protected abstract Vector3 ServeDirection { get; }
 
         private bool _hasBall;
     
@@ -34,7 +35,7 @@ namespace Players.Serving
             // Если в руках - запустить
             if (_hasBall)
             {
-                _ball.Serve();
+                _ball.Serve(ServeDirection);
             }
 
             // Иначе "взять в руки"

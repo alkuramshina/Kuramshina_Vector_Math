@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Players\Serving\BallServer.cs" />
      <Compile Include="Assets\Scripts\Players\Serving\Player1BallServer.cs" />
      <Compile Include="Assets\Scripts\Players\Serving\Player2BallServer.cs" />
+     <Compile Include="Assets\Scripts\Scorer.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\Players\Serving" />
      <Folder Include="Assets\Scripts\Players\Moving" />

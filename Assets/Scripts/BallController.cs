@@ -19,7 +19,7 @@ public class BallController: MonoBehaviour
     }
 
     // Стенки/блоки/игроки
-    private void OnCollisionExit(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         _movingDirection = Vector3.Reflect(_movingDirection, other.GetContact(0).normal);
     }
@@ -31,7 +31,7 @@ public class BallController: MonoBehaviour
             return;
         }
 
-        _rigidbody.velocity = _movingDirection * (speed * Time.deltaTime);
+        _rigidbody.velocity = _movingDirection.normalized * (speed * Time.deltaTime);
     }
 
     public void Grab(Transform player)
@@ -41,22 +41,21 @@ public class BallController: MonoBehaviour
             return;
         }
 
-        transform.SetParent(player);
         transform.SetPositionAndRotation(player.position, player.rotation);
-
-        _movingDirection = Vector3.zero;
 
         IsMoving = false;
         IsGrabbed = true;
     }
 
-    public void Serve()
+    public void Serve(Vector3 direction)
     {
         if (!IsGrabbed || IsMoving)
         {
             return;
         }
 
+        _movingDirection = direction;
+        
         IsMoving = true;
         IsGrabbed = false;
     }
@@ -70,7 +69,8 @@ public class BallController: MonoBehaviour
 
         IsMoving = false;
         IsGrabbed = false;
-        
+
+        _movingDirection = Vector3.zero;
         transform.position = startingPosition;
     }
 }
