@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""541013d5-01db-43b6-b8ff-f7ebb52030c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Player2Serve"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e59d6c5-4b7a-42c8-adc9-ef1a6512a196"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +228,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Default_Player2Movement = m_Default.FindAction("Player2Movement", throwIfNotFound: true);
         m_Default_Player1Serve = m_Default.FindAction("Player1Serve", throwIfNotFound: true);
         m_Default_Player2Serve = m_Default.FindAction("Player2Serve", throwIfNotFound: true);
+        m_Default_Pause = m_Default.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,6 +294,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_Player2Movement;
     private readonly InputAction m_Default_Player1Serve;
     private readonly InputAction m_Default_Player2Serve;
+    private readonly InputAction m_Default_Pause;
     public struct DefaultActions
     {
         private @PlayerControls m_Wrapper;
@@ -281,6 +303,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Player2Movement => m_Wrapper.m_Default_Player2Movement;
         public InputAction @Player1Serve => m_Wrapper.m_Default_Player1Serve;
         public InputAction @Player2Serve => m_Wrapper.m_Default_Player2Serve;
+        public InputAction @Pause => m_Wrapper.m_Default_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -302,6 +325,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Player2Serve.started += instance.OnPlayer2Serve;
             @Player2Serve.performed += instance.OnPlayer2Serve;
             @Player2Serve.canceled += instance.OnPlayer2Serve;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
@@ -318,6 +344,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Player2Serve.started -= instance.OnPlayer2Serve;
             @Player2Serve.performed -= instance.OnPlayer2Serve;
             @Player2Serve.canceled -= instance.OnPlayer2Serve;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -341,5 +370,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnPlayer2Movement(InputAction.CallbackContext context);
         void OnPlayer1Serve(InputAction.CallbackContext context);
         void OnPlayer2Serve(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
