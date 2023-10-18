@@ -42,20 +42,22 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Players\Moving\Player1Mover.cs" />
+     <Compile Include="Assets\Scripts\UI\VersionUI.cs" />
+     <Compile Include="Assets\Scripts\Players\Pausing.cs" />
      <Compile Include="Assets\Scripts\Players\Serving\BallServer.cs" />
      <Compile Include="Assets\Scripts\Players\Moving\Player2Mover.cs" />
+     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
      <Compile Include="Assets\Scripts\Players\Moving\PlayerMover.cs" />
      <Compile Include="Assets\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\BallController.cs" />
      <Compile Include="Assets\Scripts\BlockController.cs" />
      <Compile Include="Assets\Scripts\Players\Serving\Player1BallServer.cs" />
+     <Compile Include="Assets\Scripts\UI\PauseUI.cs" />
      <Compile Include="Assets\Scripts\Players\Serving\Player2BallServer.cs" />
      <Compile Include="Assets\Scripts\PlayerGates.cs" />
      <Compile Include="Assets\Scripts\Scorer.cs" />
-     <Compile Include="Assets\Scripts\UI\VersionUI.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
-     <Compile Include="Assets\Scripts\UI\PauseUI.cs" />
-     <Compile Include="Assets\Scripts\Players\Pausing.cs" />
+     <Compile Include="Assets\Scripts\UI\PlayerScoreUI.cs" />
+     <Compile Include="Assets\Scripts\LookAtCamera.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
