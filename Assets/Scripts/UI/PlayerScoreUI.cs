@@ -10,10 +10,10 @@ namespace UI
 
         private void Start()
         {
-            scorer.OnScoreChanged += ScorerOnScoreChanged;
+            scorer.OnScoreChanged += OnScoreChanged;
         }
 
-        private void ScorerOnScoreChanged(object sender, Scorer.OnScoreChangedEventArgs e)
+        private void OnScoreChanged(object sender, Scorer.OnScoreChangedEventArgs e)
         {
             healthText.text = e.Value.ToString();
         }
